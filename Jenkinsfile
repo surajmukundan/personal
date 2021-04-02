@@ -1,4 +1,5 @@
 def namespace = 'gradleproject'
+def registry = 'https://hub.docker.com/'
 
 pipeline {
   agent any
@@ -18,8 +19,8 @@ pipeline {
     stage('Build Docker Image') {
       steps {
           sh '''
-				sudo docker build -t java11demo:latest .
-				sudo docker push java11demo:latest
+				sudo docker build -t java11demolatest .
+				sudo docker push ${registry}/frozenmind/jobsearch:java11demolatest
 				echo "image build and push completed"
 			 '''
       }
