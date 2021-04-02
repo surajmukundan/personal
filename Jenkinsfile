@@ -1,5 +1,5 @@
 def namespace = 'gradleproject'
-def registry = 'https://hub.docker.com/'
+def registry = 'https://hub.docker.com/repository/docker'
 
 pipeline {
   agent any
