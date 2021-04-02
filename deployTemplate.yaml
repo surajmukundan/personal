@@ -4,13 +4,16 @@ metadata:
   name: java-11-demo-deployment
   namespace: gradleproject
   labels:
-    app: java-11-demo-app
+    app: java-11-demo
 spec:
   replicas: 2
+  selector:
+    matchLabels:
+      app: java-11-demo
   template:
     metadata:
       labels:
-        apps: java-11-demo
+        app: java-11-demo
     spec:
       containers:
       - name: java-11-demo
