@@ -36,6 +36,12 @@ pipeline {
 	      sh("kubectl --namespace=${namespace} apply -f deployTemplate.yaml")
 	      sh("echo 'image deploy completed'")
       }
+	  }
+		  stage('Create service and expose'){
+			  steps {
+				  sh("kubectl --namespace=${namespace} apply -f serviceTemplate.yaml")
+				  sh("echo 'service exposed'")
+			  }
     }
   }
 
