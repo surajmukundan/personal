@@ -1,5 +1,8 @@
 pipeline {
   agent any
+	 tools {
+        gradle "gradle6.8.3"
+    }
   stages {
     stage('Build') {
       steps {  
