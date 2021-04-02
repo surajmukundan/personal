@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: java-11-demo
-        image: hub.docker.com/repository/docker/frozenmind/jobsearch:java11demo
+        image: hub.docker.com/repository/docker/frozenmind/jobsearch:java11demolatest
         ports:
         - containerPort: 8081
