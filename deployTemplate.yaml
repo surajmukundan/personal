@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: java-11-demo
-        image: frozenmind/jobsearch:java11demolatest
+        image: localhost:5000/frozenmind/jobsearch:java11demolatest
         ports:
         - containerPort: 8081
