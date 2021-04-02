@@ -19,8 +19,10 @@ pipeline {
     stage('Build Docker Image') {
       steps {
 	      sh("sudo docker build -t ${imageTag} .")
-              sh("sudo docker push ${imageTag}")
+	      sh("sudo docker image tag frozenmind/java11demo:latest hub.docker.com/repository/docker/frozenmind/java11demo:latest")
+              sh("sudo docker image push hub.docker.com/repository/docker/frozenmind/java11demo:latest")
 	      sh("echo 'image build and push completed'")
+	      
 			 
       }
     }
