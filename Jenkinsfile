@@ -20,7 +20,7 @@ pipeline {
     stage('Build Docker Image') {
       steps {
 	      sh("sudo docker build -t ${imageTag} .")
-	      sh("sudo docker login -u=${DOCKER_USERNAME} -p=${DOCKER_PASSWORD} ${registry}")
+	      sh("sudo docker login -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}" "${registry}"")
               sh("sudo docker image push ${imageTag}")
 	      sh("echo 'image build and push completed'")
 	      
