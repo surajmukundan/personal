@@ -1,6 +1,6 @@
 def namespace = "gradleproject"
 def imageTag = "frozenmind/java11demo:latest"
-def registry = "docker.io"
+def registry = "hub.docker.com"
 
 
 pipeline {
