@@ -2,7 +2,6 @@ pipeline {
   agent any
   tools {
         gradle "gradle6.8.3"
-	'org.jenkinsci.plugins.docker.commons.tools.DockerTool' "Default"
     }
   
   options {
