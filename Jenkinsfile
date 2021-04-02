@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {  
-        sh "gradle compileJava build --refresh-dependencies"   
+        sh "gradle clean compileJava build --refresh-dependencies"   
       }
     }
     stage('Build Docker Image') {
