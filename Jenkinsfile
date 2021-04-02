@@ -1,8 +1,13 @@
 pipeline {
   agent any
-	 tools {
+  tools {
         gradle "gradle6.8.3"
+	docker "Default"
     }
+  
+  options {
+	 buildDiscarder(logRotator(numToKeepStr: '2', daysToKeepStr: '1'))
+  }
   stages {
     stage('Build') {
       steps {  
