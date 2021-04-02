@@ -1,5 +1,5 @@
 def namespace = "gradleproject"
-def imageTag = "frozenmind/java11demo:latest"
+def imageTag = "java11demo:latest"
 def registry = "localhost:5000"
 
 
@@ -20,9 +20,10 @@ pipeline {
     }
     stage('Build Docker Image') {
       steps {
-	      sh("sudo docker build -t ${imageTag} .")
+	      sh("sudo docker build -t java11demo:latest .")
 	      //sh("sudo docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD} ${registry}")
-              sh("sudo docker image push localhost:5000/${imageTag}")
+	      sh("sudo docker tag java11demo:latest localhost:5000/java11demo")
+              sh("sudo docker image push localhost:5000/java11demo")
 	      sh("echo 'image build and push completed'")
 	      
 			 
