@@ -18,20 +18,18 @@ pipeline {
     }
     stage('Build Docker Image') {
       steps {
-          sh '''
-				sudo docker build -t ${imageTag} .
-				sudo docker push ${imageTag}
-				echo "image build and push completed"
-			 '''
+	      sh("sudo docker build -t ${imageTag} .")
+              sh("sudo docker push ${imageTag}")
+	      sh("echo 'image build and push completed'")
+			 
       }
     }
 	  stage('Deploy Image') {
       steps {
-          sh '''
-				kubectl get ns ${namespace} || kubectl create ns ${namespace}
-				kubectl --namespace=${namespace} apply -f deployTemplate.yaml
-				echo "image deploy completed"
-			 '''
+          
+	      sh("kubectl get ns ${namespace} || kubectl create ns ${namespace}")
+	      sh("kubectl --namespace=${namespace} apply -f deployTemplate.yaml")
+	      sh("echo 'image deploy completed'")
       }
     }
   }
