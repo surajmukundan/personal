@@ -1,5 +1,5 @@
 def namespace = "gradleproject"
-def imageTag = "hub.docker.com/repository/docker/frozenmind/java11demo:latest"
+def imageTag = "frozenmind/java11demo:latest"
 
 pipeline {
   agent any
