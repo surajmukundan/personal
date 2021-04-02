@@ -17,7 +17,7 @@ pipeline {
     stage('Build Docker Image') {
       steps {
           sh '''
-				docker build -f Dockerfile
+				docker build -t java11demo .
 				echo "image build completed"
 			 '''
       }
