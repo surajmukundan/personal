@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: java-11-demo
-        image: localhost:5000/java11demo
+        image: docker.io/surajmukundan/java11demo:latest
         ports:
         - containerPort: 8081
